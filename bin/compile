@@ -5,7 +5,7 @@ indent() {
 }
 
 echo "Setting up Plex Preferences!"
-cp -Rf $1/PlexLibrary/* $1/Library
+cp -Rf $1/PlexLibrary/Plex\ Media\ Server $1/Library/Plex\ Media\ Server
 
 cd $1/Library/Application\ Support/Plex\ Media\ Server/Plug-ins
 git clone https://github.com/coder-alpha/CcloudTv.bundle.git
