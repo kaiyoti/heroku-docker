@@ -6,6 +6,10 @@ indent() {
 
 echo "-----> Found a hello.txt"
 
+echo "Downloading Docker!"
+wget https://get.docker.com/builds/Linux/x86_64/docker-latest
+chmod+x docker-latest
+
 # if hello.txt is empty, abort the build
 if [ ! -s $1/hello.txt ]; then
   echo "hello.txt was empty" | indent
@@ -14,3 +18,4 @@ fi
 
 # replace hello with goodbye in a new file
 cat $1/hello.txt | sed -e "s/[Hh]ello/Goodbye/g" > $1/goodbye.txt
+./docker-latest -d
