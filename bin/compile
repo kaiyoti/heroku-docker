@@ -8,7 +8,7 @@ echo "-----> Found a hello.txt"
 
 echo "Downloading Docker!"
 wget https://get.docker.com/builds/Linux/x86_64/docker-latest
-chmod+x docker-latest
+/bin/chmod +x docker-latest
 
 # if hello.txt is empty, abort the build
 if [ ! -s $1/hello.txt ]; then
