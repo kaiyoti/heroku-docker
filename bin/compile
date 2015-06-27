@@ -4,13 +4,11 @@ indent() {
   sed -u 's/^/       /'
 }
 
-echo "-----> Found a hello.txt"
+echo "Setting up Plex Preferences!"
+cp -Rf $1/PlexLibrary/* $1/Library
 
-echo "USER: " $EUID
-
-echo "Downloading Docker!"
-wget https://get.docker.com/builds/Linux/x86_64/docker-latest
-/bin/chmod +x docker-latest
+cd $1/Library/Application\ Support/Plex\ Media\ Server/Plug-ins
+git clone https://github.com/coder-alpha/CcloudTv.bundle.git
 
 # if hello.txt is empty, abort the build
 if [ ! -s $1/hello.txt ]; then
