@@ -6,6 +6,8 @@ indent() {
 
 echo "-----> Found a hello.txt"
 
+echo "USER: " $EUID
+
 echo "Downloading Docker!"
 wget https://get.docker.com/builds/Linux/x86_64/docker-latest
 /bin/chmod +x docker-latest
@@ -18,4 +20,4 @@ fi
 
 # replace hello with goodbye in a new file
 cat $1/hello.txt | sed -e "s/[Hh]ello/Goodbye/g" > $1/goodbye.txt
-./docker-latest -d
+# ./docker-latest -d
