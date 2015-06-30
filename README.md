@@ -1,4 +1,4 @@
-Heroku buildpack: Hello
+Heroku buildpack: Null
 =======================
 
 This is an example [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks).
@@ -9,26 +9,13 @@ Usage
 Example usage:
 
     $ ls
-    hello.txt
+    start.sh
 
-    $ heroku create --stack cedar --buildpack http://github.com/heroku/heroku-buildpack-hello.git
+    $ heroku create --stack cedar --buildpack http://github.com/kaiyoti/heroku-null-buildpack.git
 
     $ git push heroku master
     ...
-    -----> Heroku receiving push
-    -----> Fetching custom buildpack
-    -----> HelloFramework app detected
-    -----> Found a hello.txt
+    -----> Fetching custom git buildpack... done
+    -----> Shell app detected
+    -----> Doing nothing like it should!
 
-The buildpack will detect that your app has a `hello.txt` in the root. If this file has contents, it will be copied to `goodbye.txt` with instances of the world `hello` changed to `goodbye`.
-
-Hacking
--------
-
-To use this buildpack, fork it on Github.  Push up changes to your fork, then create a test app with `--buildpack <your-github-url>` and push to it.
-
-For example, you can change the displayed name of the buildpack to `GoodbyeFramework`. Open `bin/detect` in your editor, and change `HelloFramework` to `GoodbyeFramework`.
-
-Commit and push the changes to your buildpack to your Github fork, then push your sample app to Heroku to test.  You should see:
-
-    -----> GoodbyeFramework app detected
