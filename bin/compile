@@ -4,14 +4,7 @@ indent() {
   sed -u 's/^/       /'
 }
 
-echo "Setting up Plex Preferences!"
-
-ls ../
-
-#cd $1/Library/Application\ Support/Plex\ Media\ Server/Plug-ins
-#git clone https://github.com/coder-alpha/CcloudTv.bundle.git
-
-#cp -Rf $1/PlexLibrary/Plex\ Media\ Server $1/Library/Application\ Support/Plex\ Media\ Server
+echo "Boom!"
 
 # if hello.txt is empty, abort the build
 #if [ ! -s $1/Channels.txt ]; then
