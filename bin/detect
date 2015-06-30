@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # this pack is valid for apps with a hello.txt in the root
-if [ -f $1/Channels.txt ]; then
-  echo "Plex App Found"
+if [ -f $1/www/index.html ]; then
+  echo "Nginx Found"
   exit 0
 else
   exit 1
