@@ -1,18 +1,3 @@
 #!/bin/sh
 
-indent() {
-  sed -u 's/^/       /'
-}
-
-version=1.8.0
-mkdir build
-cd build
-echo "Downloading sources..."
-curl ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.37.tar.gz | tar xvz
-curl "http://nginx.org/download/nginx-$version.tar.gz" | tar xvz
-cd nginx*
-./configure --prefix=$HOME/nginx --with-pcre=../pcre*
-
-echo "compiling"
-make
-make install
+echo "Doing nothing like it should"
