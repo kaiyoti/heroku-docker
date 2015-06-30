@@ -4,14 +4,15 @@ indent() {
   sed -u 's/^/       /'
 }
 
-echo "Boom!"
+version=1.8.0
+mkdir build
+cd build
+echo "Downloading sources..."
+curl ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.37.tar.gz | tar xvz
+curl "http://nginx.org/download/nginx-$version.tar.gz" | tar xvz
+cd nginx*
+./configure --prefix=$HOME/nginx --with-pcre=../pcre*
 
-# if hello.txt is empty, abort the build
-#if [ ! -s $1/Channels.txt ]; then
-#  echo "hello.txt was empty" | indent
-#  exit 1
-#fi
-
-# replace hello with goodbye in a new file
-# cat $1/hello.txt | sed -e "s/[Hh]ello/Goodbye/g" > $1/goodbye.txt
-# ./docker-latest -d
+echo "compiling"
+make
+make install
