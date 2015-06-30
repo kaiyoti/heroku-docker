@@ -1,10 +1,8 @@
 #!/bin/sh
--cat << EOF
-----
--addons:
--  - shared-database:5mb
--config_vars:
--  PATH: bin:/usr/bin:/bin
--default_process_types:
--  web: bash start.sh
--EOF
+cat <<EOF
+---
+config_vars:
+  PATH: bin:/usr/bin:/bin
+default_process_types:
+  web: bash start.sh
+EOF
